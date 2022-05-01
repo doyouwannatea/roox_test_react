@@ -1,0 +1,23 @@
+@import '/src/styles/colors.scss';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  gap: 0.4375rem;
+
+  font-size: 0.6875rem;
+  line-height: 0.8125rem;
+  color: #000;
+}
+
+.itemTitle {
+  color: $gray-color-3;
+}

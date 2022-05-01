@@ -6,7 +6,7 @@
   border: 0;
   padding: 0.3125rem 0.9375rem;
 
-  font-weight: 400;
+  font-weight: inherit;
   font-size: 0.75rem;
   color: #ffffff;
   cursor: pointer;
@@ -19,4 +19,9 @@
 
 .btn.success {
   background-color: $green-color-1;
+}
+
+.btn.link {
+  background-color: transparent;
+  color: $primary-color;
 }

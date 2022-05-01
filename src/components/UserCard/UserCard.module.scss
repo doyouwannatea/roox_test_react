@@ -1,0 +1,15 @@
+@import '/src/styles/colors.scss';
+
+.card {
+  display: flex;
+  gap: 0.625rem;
+  justify-content: space-between;
+
+  background: $gray-color-2;
+  border-radius: 0.5rem;
+  padding: 0.625rem;
+}
+
+.cardButton {
+  margin-top: auto;
+}

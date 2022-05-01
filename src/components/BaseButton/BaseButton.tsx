@@ -2,19 +2,21 @@ import classNames from 'classnames';
 import styles from './BaseButton.module.scss';
 
 type Props = {
+  className?: string;
   disabled?: boolean;
-  variant?: 'success';
+  variant?: 'success' | 'link';
 };
 
 const BaseButton: React.FC<Props> = ({
   variant = '',
   disabled,
   children,
+  className,
 }) => {
   return (
     <button
       disabled={disabled}
-      className={classNames([styles.btn, styles[variant]])}
+      className={classNames([className, styles.btn, styles[variant]])}
     >
       {children}
     </button>
