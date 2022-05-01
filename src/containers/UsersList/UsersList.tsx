@@ -3,11 +3,12 @@ import UserCard from 'components/UserCard';
 import { useGetUsersQuery } from 'api/jsonPlaceholderApi';
 import { useTypedSelector } from 'store/store';
 import { useSortedUsersList } from 'hooks/useSortedUsersList';
+import { userLoading } from 'store/reducers/user/userSelectors';
 
 const UsersList = () => {
   useGetUsersQuery();
   const usersList = useSortedUsersList();
-  const loading = useTypedSelector((state) => state.user.loading);
+  const loading = useTypedSelector(userLoading);
 
   return (
     <section>
