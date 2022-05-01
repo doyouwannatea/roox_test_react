@@ -97,7 +97,11 @@ const UserProfile = () => {
           {...register('website', { required: true })}
           label="Website"
         />
-        <BaseTextArea {...register('comment')} label="Comment" />
+        <BaseTextArea
+          disabled={!editable}
+          {...register('comment')}
+          label="Comment"
+        />
       </form>
       <BaseButton
         variant={
