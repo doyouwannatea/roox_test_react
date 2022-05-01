@@ -1,0 +1,16 @@
+@import '/src/styles/colors.scss';
+
+.container {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  height: 100%;
+}
+
+.main {
+  margin-left: 1.875rem;
+  margin-right: 1.875rem;
+}
+
+.sidebar {
+  background-color: $gray-color-3;
+}
