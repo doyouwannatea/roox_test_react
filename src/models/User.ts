@@ -27,3 +27,6 @@ export interface Company {
   catchPhrase: string;
   bs: string;
 }
+
+export type FieldsToSortUsersBy = keyof (Pick<Company, 'name'> &
+  Pick<Address, 'city'>);
