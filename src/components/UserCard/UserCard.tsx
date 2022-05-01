@@ -5,9 +5,10 @@ import { User } from 'models/User';
 
 type Props = {
   user: User;
+  onClick?: (user: User) => void;
 };
 
-const UserCard: React.FC<Props> = ({ user }) => {
+const UserCard: React.FC<Props> = ({ user, onClick }) => {
   return (
     <section className={styles.card}>
       <BaseList
@@ -17,7 +18,11 @@ const UserCard: React.FC<Props> = ({ user }) => {
           { key: 3, title: 'компания:', value: user.company.name },
         ]}
       />
-      <BaseButton variant="link" className={styles.cardButton}>
+      <BaseButton
+        onClick={() => onClick && onClick(user)}
+        variant="link"
+        className={styles.cardButton}
+      >
         Подробнее
       </BaseButton>
     </section>

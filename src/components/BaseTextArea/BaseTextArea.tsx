@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import styles from './BaseTextArea.module.scss';
 import inputStyles from '../BaseInput/BaseInput.module.scss';
+import { forwardRef } from 'react';
 
 type Props = {
   error?: boolean;
@@ -10,28 +11,26 @@ type Props = {
   HTMLTextAreaElement
 >;
 
-const BaseTextArea: React.FC<Props> = ({
-  error,
-  label,
-  className,
-  ...props
-}) => {
-  return (
-    <label className={inputStyles.container}>
-      <span className={inputStyles.label}>{label}</span>
-      <textarea
-        className={classNames(
-          className,
-          styles.textarea,
-          inputStyles.input,
-          {
-            [inputStyles.error]: error,
-          }
-        )}
-        {...props}
-      />
-    </label>
-  );
-};
+const BaseTextArea = forwardRef<HTMLTextAreaElement, Props>(
+  ({ error, label, className, ...props }, ref) => {
+    return (
+      <label className={inputStyles.container}>
+        <span className={inputStyles.label}>{label}</span>
+        <textarea
+          ref={ref}
+          className={classNames(
+            className,
+            styles.textarea,
+            inputStyles.input,
+            {
+              [inputStyles.error]: error,
+            }
+          )}
+          {...props}
+        />
+      </label>
+    );
+  }
+);
 
 export default BaseTextArea;

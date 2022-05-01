@@ -7,6 +7,7 @@ export interface State {
   error: string;
   usersList?: User[];
   sortBy?: FieldsToSortUsersBy;
+  selectedUser?: User;
 }
 
 const initialState: State = {
@@ -14,6 +15,7 @@ const initialState: State = {
   error: '',
   usersList: undefined,
   sortBy: undefined,
+  selectedUser: undefined,
 };
 
 export const userSlice = createSlice({
@@ -28,6 +30,10 @@ export const userSlice = createSlice({
       action: PayloadAction<FieldsToSortUsersBy>
     ) => {
       state.sortBy = action.payload;
+    },
+    selectUser: (state, action: PayloadAction<User>) => {
+      // state.selectedUser = action.payload;
+      return { ...state, selectedUser: action.payload };
     },
   },
   extraReducers: (builder) => {
@@ -55,5 +61,5 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setUsers, setSortBy } = userSlice.actions;
+export const { setUsers, setSortBy, selectUser } = userSlice.actions;
 export default userSlice.reducer;
