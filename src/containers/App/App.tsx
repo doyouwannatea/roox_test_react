@@ -1,25 +1,13 @@
-import logo from 'assets/icons/logo.svg';
-import styles from './App.module.scss';
+import LayoutWithSidebar from 'components/LayoutWithSidebar';
+import UsersList from 'containers/UsersList';
+import UsersSorter from 'containers/UsersSorter';
 
-function App() {
+const App = () => {
   return (
-    <div className={styles.app}>
-      <header className={styles.header}>
-        <img src={logo} className={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className={styles.link}
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LayoutWithSidebar sidebar={<UsersSorter />}>
+      <UsersList />
+    </LayoutWithSidebar>
   );
-}
+};
 
 export default App;
