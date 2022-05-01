@@ -1,0 +1,22 @@
+@import '/src/styles/colors.scss';
+
+.btn {
+  background: $primary-color;
+  border-radius: 0.3125rem;
+  border: 0;
+  padding: 0.3125rem 0.9375rem;
+
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: $gray-color-1 !important;
+  cursor: default !important;
+}
+
+.btn.success {
+  background-color: $green-color-1;
+}
