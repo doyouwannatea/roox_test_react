@@ -100,6 +100,9 @@ const UserProfile = () => {
         <BaseTextArea {...register('comment')} label="Comment" />
       </form>
       <BaseButton
+        variant={
+          Object.keys(errors).length === 0 ? 'success' : undefined
+        }
         disabled={!editable}
         onClick={handleSubmit(onSubmit)}
         className={styles.submitBtn}

@@ -12,6 +12,14 @@
   cursor: pointer;
 }
 
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
 .btn:disabled {
   background-color: $gray-color-1 !important;
   cursor: default !important;
@@ -24,4 +32,9 @@
 .btn.link {
   background-color: transparent;
   color: $primary-color;
+}
+
+.btn.link:disabled {
+  background-color: transparent !important;
+  color: $gray-color-1 !important;
 }
